@@ -7,15 +7,9 @@ import Footer from '../layout/Footer'
 const Page404 = () => {
 
     return (
-        <>
-      {/* <Header />
-      <div id='main'>
-        <Content/>
-        <Sidebar/>
-      </div>
-      <Footer/> */}
-      <h1>Página não encontrada</h1>
-    </>
+      <>
+       <h1>Página não encontrada</h1>
+      </>
     )
 }
 
