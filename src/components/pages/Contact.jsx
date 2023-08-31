@@ -4,20 +4,20 @@ import Content from '../layout/Content'
 import Footer from '../layout/Footer'
 
 
-const Home = () => {
+const Contact = () => {
 
-    return (
-        <>
+  return (
+    <>
       <Header />
       <div id='main'>
         <Content>
-          <h1>Home</h1>
+          <h1>Contato</h1>
         </Content>
-        <Sidebar/>
+        <Sidebar />
       </div>
-      <Footer/>
+      <Footer />
     </>
-    )
+  )
 }
 
-export default Home
+export default Contact

@@ -6,11 +6,17 @@ import Footer from '../layout/Footer'
 
 const Page404 = () => {
 
-    return (
-      <>
-       <h1>Página não encontrada</h1>
-      </>
-    )
+  return (
+    <>
+      <Header />
+      <div id='main'>
+        <Content>
+          <h1>Página não encontrada</h1>
+        </Content>
+      </div>
+      <Footer />
+    </>
+  )
 }
 
 export default Page404
