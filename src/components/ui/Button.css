@@ -1,0 +1,21 @@
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition-duration: .3s;
+    padding: 10px;
+    background-color: lightgray;
+    transition-duration: .8s;
+
+
+}
+.primary:hover {
+    background-color: rgb(46, 46, 46);
+    color: white;
+
+}
+.secondary:hover {
+    background-color: rgb(46, 46, 46);
+    color: white;
+
+} 
