@@ -1,13 +1,19 @@
 button {
+    position: relative;
     cursor: pointer;
     border-radius: 5px;
     border: none;
     transition-duration: .3s;
     padding: 10px;
-    background-color: lightgray;
     transition-duration: .8s;
-
-
+    left: 29px;
+    z-index: 1;
+}
+.primary {
+    background-color: lightgray;
+}
+.secondary{
+    background-color: rgb(155, 155, 155);
 }
 .primary:hover {
     background-color: rgb(46, 46, 46);
