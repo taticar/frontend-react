@@ -3,30 +3,46 @@ import Sidebar from '../layout/Sidebar'
 import Content from '../layout/Content'
 import Footer from '../layout/Footer'
 import CardUser from '../ui/CardUser'
+import { useEffect, useState } from 'react'
 
-const users = {
-  name: "fdsafdsf",
-  email: "fg@gmail",
-  photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMmfF00-q6JffFrYIExZ6aucRIFx3sJFBEtA&usqp=CAU"
-}
-
-
+// const users = [{
+//   id: 1,
+//   name: "fdsafdsf",
+//   email: "fg@gmail",
+//   photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMmfF00-q6JffFrYIExZ6aucRIFx3sJFBEtA&usqp=CAU"
+// },
+// {
+//   id: 2,
+//   name: "dfdg",
+//   email: "dfdg@gmail",
+//   photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMmfF00-q6JffFrYIExZ6aucRIFx3sJFBEtA&usqp=CAU"
+// }
+// ]
 
 const About = () => {
 
+  const[users, setUsers] = useState([])
+
+  useEffect(() => {
+
+    const getUsers =  async () => {
+      const response = await fetch('http://localhost:3300/user/list')
+      const data = await response.json()
+      setUsers(data.user)
+    }
+    getUsers()
+  }, [])
   return (
     <>
       <Header />
       <div id='main'>
         <Content>
           <h1>Quem Somos</h1>
-          <CardUser user={user}/>
-          <CardUser user={{
-            nome: "Maria",
-            email: "maria@gmail.com",
-            photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQO4LLq9jsK36mE3uNmZLU7SM_Ftmf3OYUsQ&usqp=CAU"
-          }}/>
-          <CardUser/>
+          {
+            users.length > 0 ? users.map((user) => {
+              return <CardUser key={user.id} user={user}/>
+            }): null
+          }
         </Content>
         <Sidebar />
       </div>
