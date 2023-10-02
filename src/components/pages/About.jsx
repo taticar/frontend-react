@@ -4,20 +4,7 @@ import Content from '../layout/Content'
 import Footer from '../layout/Footer'
 import CardUser from '../ui/CardUser'
 import { useEffect, useState } from 'react'
-
-// const users = [{
-//   id: 1,
-//   name: "fdsafdsf",
-//   email: "fg@gmail",
-//   photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMmfF00-q6JffFrYIExZ6aucRIFx3sJFBEtA&usqp=CAU"
-// },
-// {
-//   id: 2,
-//   name: "dfdg",
-//   email: "dfdg@gmail",
-//   photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMmfF00-q6JffFrYIExZ6aucRIFx3sJFBEtA&usqp=CAU"
-// }
-// ]
+import  Button  from 'react-bootstrap/Button'
 
 const About = () => {
 
@@ -38,6 +25,8 @@ const About = () => {
       <div id='main'>
         <Content>
           <h1>Quem Somos</h1>
+          <Button as="button" variant="primary">Cadastrar usuário
+          </Button>
           {
             users.length > 0 ? users.map((user) => {
               return <CardUser key={user.id} user={user}/>
