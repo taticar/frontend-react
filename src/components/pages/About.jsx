@@ -45,11 +45,8 @@ const About = () => {
       alert(data.success)
       setShowModal(false)
       setUsers([...users, data.user])
-
+    }
   }
-}
-
-
   return (
     <>
       <Header />
@@ -72,28 +69,28 @@ const About = () => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Nome completo</Form.Label>
-                    <Form.Control type="name" name="name" placeholder="Nome completo" />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="name@example.com" />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>password</Form.Label>
-                    <Form.Control type="password" name="pass" placeholder="senha" />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Imagem</Form.Label>
-                    <Form.Control type="url" name="photo" placeholder="Imagem" />
-                  </Form.Group>
-                  <Button variant="primary" type="submit">Cadastrar
-                  </Button>
-                </Form>
-              
+
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>Nome completo</Form.Label>
+                  <Form.Control type="name" name="name" placeholder="Nome completo" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" name="email" placeholder="name@example.com" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>password</Form.Label>
+                  <Form.Control type="password" name="pass" placeholder="senha" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>Imagem</Form.Label>
+                  <Form.Control type="url" name="photo" placeholder="Imagem" />
+                </Form.Group>
+                <Button variant="primary" type="submit">Cadastrar
+                </Button>
+              </Form>
+
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setShowModal(false)}>Close</Button>
@@ -101,7 +98,7 @@ const About = () => {
           </Modal>
           {
             users.length > 0 ? users.map((user) => {
-              return <CardUser key={user.id} user={user} />
+              return <CardUser key={user.id} user={user} users={users} setUsers={setUsers} />
             }) : null
           }
 
