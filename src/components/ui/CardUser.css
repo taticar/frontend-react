@@ -8,9 +8,28 @@
     align-items: center;
     padding: 10px;
     margin: 15px;
+    position: relative
 
 }
-
+.card-user .icon-edit{
+    position:absolute;
+    top: 10px;
+    right: 32px;
+    cursor: pointer;
+    padding: 5px;
+    width: 26px;
+    height: 26px;
+}
+.card-user .icon-trash{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    padding: 5px;
+    width: 26px;
+    height: 26px;
+    color: rgb(92, 2, 2);
+}
 .card-user img{
     width: 90px;
     height: 90px;
