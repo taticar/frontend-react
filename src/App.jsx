@@ -1,14 +1,15 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Home from './components/pages/Home.jsx'
-import Page404 from './components/pages/Page404.jsx'
-import About from './components/pages/About.jsx'
-import Contact from './components/pages/Contact.jsx'
-import Products from './components/pages/Products.jsx'
-
+import Home from "./components/pages/Home"
+import QuemSomos from "./components/pages/QuemSomos"
+import Page404 from "./components/pages/Page404"
+import Contato from "./components/pages/Contato"
+import {Routes, Route} from "react-router-dom"
+import "./App.css"
+import Initializer from "./components/others/Initializer"
 
 const App = () => {
   return (
+  <>
+    <Initializer />
     <Routes>
       <Route path='/' element={<Home/>} />
 
@@ -17,7 +18,8 @@ const App = () => {
       <Route path='/contato' element={<Contact/>}/>
       <Route path='*' element={<Page404/>}/>
     </Routes>
+  </>
   )
 }
 
-export default App
+export default App;

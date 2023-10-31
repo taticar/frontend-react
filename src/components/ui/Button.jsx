@@ -1,9 +1,9 @@
-import './Button.css';
+import './Button.css'
 
-const Button = ({children, variant}) => {
-    return (
-        variant === 'primary' ? <button className="custom-button primary">{children}</button> : <button className="custom-button secondary">{children}</button>
-    )
+const Button = ({children, variant, ...rest}) => {
+  return (
+    <button {...rest} className={variant}>{children}</button>
+  )
 }
 
 export default Button

@@ -1,11 +1,15 @@
-import './Footer.css'
-
+import "./Footer.css"
+import useUserStore from '../../store/userStore.js'
+ 
 const Footer = () => {
-    return (
-        <footer id='footer'>
-            <h1>Tatiana</h1>
-        </footer>
-    )
-};
 
-export default Footer
+  const nameUser = useUserStore((state) => state.name)
+
+  return (
+    <footer>
+        <span>Tatiana Carvalho @ 2023 - Logado como: {nameUser}</span>
+    </footer>
+  )
+}
+
+export default Footer;
